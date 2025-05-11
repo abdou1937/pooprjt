@@ -1,15 +1,36 @@
 public class Driver {
-  private String name;
-  private String licenseNumber;
+    private String name;
+    private String vehicle;
+    private Preferences preferences;
 
-  public Driver(String name, String licenseNumber) {
-      this.name = name;
-      this.licenseNumber = licenseNumber;
-  }
+    public Driver(String name, String vehicle) {
+        this.name = name;
+        this.vehicle = vehicle;
+        this.preferences = new Preferences();  
+    }
 
-  // Méthode pour créer une course
-  public Trip createTrip(Itinerary itinerary, Preferences preferences, String date) {
-    return new Trip(this, itinerary, preferences, date);
-}
+    // Getters&setters
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getVehicle() {
+        return vehicle;
+    }
+
+    public void setVehicle(String vehicle) {
+        this.vehicle = vehicle;
+    }
+
+    public Preferences getPreferences() {
+        return preferences;
+    }
+
+    public void setPreferences(Preferences preferences) {
+        this.preferences = preferences;
+    }
 }
